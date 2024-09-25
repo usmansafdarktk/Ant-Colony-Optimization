@@ -35,6 +35,7 @@ The basic structure of an ACO algorithm includes:
 Several ACO models have been developed to improve upon the original Ant System:
 1. **Ant System**: The foundational model where ants probabilistically move based on pheromone and heuristic information. Pheromone evaporation occurs after each iteration.
 
+
 2. **Ant Colony System**: Introduces pseudo-random selection to balance exploration and exploitation.
 
 3. **Max-Min Ant System**: Limits pheromone values to a specific range to prevent excessive accumulation or decay of pheromone.
