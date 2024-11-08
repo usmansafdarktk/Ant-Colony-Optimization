@@ -34,15 +34,6 @@ The basic structure of an ACO algorithm includes:
 ## ACO Models
 Several ACO models have been developed to improve upon the original Ant System:
 1. **Ant System**: The foundational model where ants probabilistically move based on pheromone and heuristic information. Pheromone evaporation occurs after each iteration.
-   
-   Transition Probability:
-   \[
-   p_{krs} = \frac{[\tau_{rs}]^\alpha \cdot [\eta_{rs}]^\beta}{\sum_{u \in N_k r} [\tau_{ru}]^\alpha \cdot [\eta_{ru}]^\beta}
-   \]
-   
-   Where:
-   - \(\alpha\) and \(\beta\) control the influence of pheromone and heuristic information.
-   - \(\rho\) is the evaporation rate.
 
 2. **Ant Colony System**: Introduces pseudo-random selection to balance exploration and exploitation.
 
@@ -55,15 +46,12 @@ Several ACO models have been developed to improve upon the original Ant System:
 ## Code Implementation
 
 ### Key Features
-- **Pheromone Evaporation**: After each iteration, pheromone values are decayed using the formula:
-  \[
-  \tau_{rs} \leftarrow (1 - \rho) \tau_{rs}
-  \]
+- **Pheromone Evaporation**: After each iteration, pheromone values are decayed.
   
-- **Stochastic Transition**: Transitions are determined probabilistically. If a random number \(r < \text{explore\_rate}\), ants explore the state space randomly; otherwise, they follow the best path.
+- **Stochastic Transition**: Transitions are determined probabilistically. If a random number is determined by formula, ants explore the state space randomly; otherwise, they follow the best path.
   
 - **Intensification of Pheromone**: The best solution found in each iteration is reinforced by updating pheromone values on the path.
 
-- **Heuristic Decay**: The importance of the heuristic parameter \(\beta\) decays over time, shifting the algorithm's focus toward learned pheromone trails.
+- **Heuristic Decay**: The importance of the heuristic parameter decays over time, shifting the algorithm's focus toward learned pheromone trails.
 
 - **Parallel Processing**: Multiple ants can be executed simultaneously using multi-threading or parallel processing to improve computational efficiency.
